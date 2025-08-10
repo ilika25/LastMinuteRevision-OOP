@@ -777,6 +777,43 @@ Derived Class Function
 - Sometimes implementation of all function cannot be provided in a base class because we don’t know the implementation. Such a class is called abstract class.
 Example, let Shape be a base class. We cannot provide implementation of function draw() in Shape, but we know every derived class must have implementation of draw().
 - Class is Abstract, if we have atleast one pure virtual function.
+- It cannot be directly instantiated.
+## Rules and Details
+- Cannot create an object of an abstract class
+```
+Base b;  // Error: cannot instantiate abstract class
+```
+- Derived classes must override all pure virtual functions or they themselves becomes abstract.
+- Abstract classes can have normal member functions and data members.
+## Why to use Abstract Classes?
+- To define base classes with some functions left to be implemented by derived ones.
+- Ensure derived class provide something specific.
+```
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    virtual void show() = 0;  // Pure virtual function
+    void hello() {
+        cout << "Hello from Base\n";
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() override {
+        cout << "Derived class implementation\n";
+    }
+};
+
+int main() {
+    // Base b; // Error: cannot instantiate abstract class
+    Derived d;
+    d.show();    // Calls overridden method
+    d.hello();   // Calls normal Base method
+}
+```
 
 ---
 
