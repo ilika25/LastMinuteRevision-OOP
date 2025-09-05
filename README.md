@@ -942,6 +942,61 @@ Protected Variable: 2
 
 
 ---
+### One Liners for Quick Revision+Interview style answers
+1. What is OOPS?-> Object Oriented Programming is a style of programming which uses objects.
+2. Class-> blueprint, Object-> instance of class
+3. Constructor can be overloaded but cannot be declared virtual.
+4. Types of Inheritance->
+   (Base,Child)
+   Single--> A-B
+   Multiple-> A,B-C
+   Multilevel-> A-B, B-C
+   Hierarchial-> A- B,C
+   Hybrid-> A- B- C,D
+5. What is the difference between Compile time and Runtime Polymorphism?
+   Compile Time                  |    Runtime
+   Resolved at compile time      |    Resolved at runtime
+   show(int) vs show(double)     |    Base class func show() overrided by Derived class function show()
+   Function/Operator overloading |    Virtual Functions/Overriding
+   
+6. How data hiding is different from abstraction
+   Data hiding → using private/protected access to restrict data.
+   Abstraction → showing only essential features
+
+7. Difference between and abstract class and interface
+   Abstract class-> at least one virtual function
+   interface-> only pure virtual functions.
+
+8. A constructor cannot be inherited. But constructor of base class can be called using super() in Java and initializer       list in C++.
+   Both super() (Java) and initializer list (C++) ensure base class constructor runs first.
+   ```C++ and Java
+   class Child extends Parent {
+    Child(int x, int y) {
+        super(x);   // calling Parent(int x)
+        System.out.println("Child constructor: " + y);
+    }
+   }
+   class Child : public Parent {
+    int y;
+	public:
+    Child(int a, int b) : Parent(a), y(b) {   // initializer list
+        cout << "Child constructor: " << y << endl;
+    }
+   };
+   ```
+
+9. Diamond Problem
+        A 
+       /  \        Ambiguity-> Which A's member should D use?
+      B1  B2
+       \   /
+         D
+
+10. Shallow Copy-> copies members bit by bit. If there are pointers, only the address is copied.
+    Deep Copy-> copies actual values, including dynamically allocated memory.
+    
+   
+---
 
 ### Thanks for Reading 
 
